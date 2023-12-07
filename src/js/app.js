@@ -14,7 +14,7 @@
       deactivateHole();
       activeHole = Math.floor(1 + Math.random() * 16);
       activateHole(activeHole);
-    }, 800);
+    }, 1000);
   }
 })();
 
