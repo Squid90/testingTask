@@ -25,6 +25,7 @@ body {
     margin: 0 15px 30px;
     background: gray;
     border-radius: 50%;
+    cursor: url(../../pic/hammer.png),auto;
   }
   
   .hole_has-goblin {
