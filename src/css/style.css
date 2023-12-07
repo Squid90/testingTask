@@ -1,0 +1,29 @@
+body {
+    color: #999;
+}
+.card {
+    width: 600px;
+    margin-bottom: 0;
+  }
+  
+  .game {
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .hole {
+    width: 150px;
+    height: 150px;
+    margin: 0 15px 30px;
+    background: gray;
+    border-radius: 50%;
+  }
+  
+  .hole_has-goblin {
+    background-image: url(../../pic/goblin.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
