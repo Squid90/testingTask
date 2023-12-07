@@ -1,10 +1,11 @@
 // TODO: write code here
+let currentScore = 0;
+let failScore = 0;
 
 (() => {
   const playing = true;
   let activeHole = 1;
-  let currentScore = 0;
-  let failScore = 0;
+  
 
   if (playing) {
     const deactivateHole = () => document.querySelector('.hole_has-goblin').classList.remove('hole_has-goblin');
@@ -19,6 +20,7 @@
     }, 1000);
   }
 })();
+
 
 for (let index = 1; index < 17; index += 1) {
   const hole = document.querySelector(`.hole${index}`);
