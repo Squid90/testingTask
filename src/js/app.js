@@ -22,12 +22,13 @@
 
 
 for (let index = 1; index < 17; index += 1) {
-  let currentScore = 0;
-  let failScore = 0;
+  
   const hole = document.querySelector(`.hole${index}`);
   hole.onclick = function () {
+    let currentScore;
+    let failScore;
     if (hole.classList.contains('hole_has-goblin')) {
-      currentScore = currentScore + 1;
+      currentScore += 1;
     } else {
       failScore += 1;
     }
