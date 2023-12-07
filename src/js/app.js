@@ -27,7 +27,7 @@ for (let index = 1; index < 17; index += 1) {
   const hole = document.querySelector(`.hole${index}`);
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
-      currentScore += 1;
+      currentScore = currentScore + 1;
     } else {
       failScore += 1;
     }
