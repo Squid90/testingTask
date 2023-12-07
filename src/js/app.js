@@ -3,6 +3,8 @@
 (() => {
   const playing = true;
   let activeHole = 1;
+  let currentScore = 0;
+  let failScore = 0;
 
   if (playing) {
     const deactivateHole = () => document.querySelector('.hole_has-goblin').classList.remove('hole_has-goblin');
@@ -22,9 +24,9 @@ for (let index = 1; index < 17; index += 1) {
   const hole = document.querySelector(`.hole${index}`);
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
-      alert("You've catched it");
+      currentScore += 1;
     } else {
-      alert("You've missed it");
+      failScore += 1;
     }
   };
 }
