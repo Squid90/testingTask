@@ -24,15 +24,11 @@ for (let index = 1; index < 17; index += 1) {
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
       this.currentScore += 1;
-      // console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
-      // document.getElementById('success').innerHTML = this.currentScore;
     } else {
       this.failScore += 1;
-      // console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
-      // document.getElementById('fail').innerHTML = this.failScore;
     }
+    console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
   };
 }
 
-document.getElementById('success').innerHTML = currentScore;
-document.getElementById('fail').innerHTML = failScore;
+
