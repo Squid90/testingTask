@@ -24,11 +24,11 @@ for (let currentScore, failScore, index = 1; index < 17; index += 1) {
     if (hole.classList.contains('hole_has-goblin')) {
       currentScore += 1;
       console.log(`${currentScore}`, `${failScore}`);
-      document.getElementById('success').innerHTML = currentScore;
+      //document.getElementById('success').innerHTML = currentScore;
     } else {
       failScore += 1;
       console.log(`${currentScore}`, `${failScore}`);
-      document.getElementById('fail').innerHTML = failScore;
+      //document.getElementById('fail').innerHTML = failScore;
     }
   };
 }
