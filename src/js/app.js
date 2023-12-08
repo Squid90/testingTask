@@ -1,5 +1,6 @@
 // TODO: write code here
-
+const currentScore = 0;
+const failScore = 0;
 (() => {
   const playing = true;
   let activeHole = 1;
@@ -20,17 +21,18 @@
 
 for (let index = 1; index < 17; index += 1) {
   const hole = document.querySelector(`.hole${index}`);
-  let currentScore = 0;
-  let failScore = 0;
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
-      currentScore += 1;
-      //console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
-      document.getElementById('success').innerHTML = currentScore;
+      this.currentScore += 1;
+      // console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
+      // document.getElementById('success').innerHTML = this.currentScore;
     } else {
-      failScore += 1;
-      //console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
-      document.getElementById('fail').innerHTML = failScore;
+      this.failScore += 1;
+      // console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
+      // document.getElementById('fail').innerHTML = this.failScore;
     }
   };
 }
+
+document.getElementById('success').innerHTML = currentScore;
+document.getElementById('fail').innerHTML = failScore;
