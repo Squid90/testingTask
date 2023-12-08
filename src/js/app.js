@@ -23,9 +23,11 @@ for (let currentScore, failScore, index = 1; index < 17; index += 1) {
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
       currentScore += 1;
+      console.log("Счет побед " `${currentScore}`, "Счет поражений" `${failScore}`);
     } else {
       failScore += 1;
+      console.log("Счет побед " `${currentScore}`, "Счет поражений" `${failScore}`);
     }
   };
-  console.log(`${currentScore} ${failScore}`);
+  
 }
