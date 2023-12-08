@@ -18,15 +18,14 @@
   }
 })();
 
-for (let index = 1; index < 17; index += 1) {
+for (let currentScore, failScore, index = 1; index < 17; index += 1) {
   const hole = document.querySelector(`.hole${index}`);
-  // let currentScore;
-  // let failScore;
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
-      // currentScore += 1;
+      currentScore += 1;
     } else {
-      // failScore += 1;
+      failScore += 1;
     }
   };
+  console.log(`${currentScore} ${failScore}`);
 }
