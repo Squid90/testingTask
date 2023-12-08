@@ -27,8 +27,7 @@ for (let index = 1; index < 17; index += 1) {
     } else {
       this.failScore += 1;
     }
-    console.log(`"Счет успеха: "${this.currentScore}`, `"Счет провала: "${this.failScore}`);
+    // console.log(`"Счет успеха: "${this.currentScore}`, `"Счет провала: "${this.failScore}`);
   };
 }
-
-
+console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
