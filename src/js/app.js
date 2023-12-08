@@ -1,33 +1,51 @@
 // TODO: write code here
-const currentScore = 0;
-const failScore = 0;
-(() => {
-  const playing = true;
-  let activeHole = 1;
+let currentScore = 0;
+let failScore = 0;
+let activeHole;
+let playing = true;
+const hole = document.querySelectorAll('.hole');
+const holeSeparate = [...hole];
+const deactivateHole = () => document.querySelector('.hole_has-goblin').classList.remove('hole_has-goblin');
+const activateHole = (index) => document.querySelector(`.hole${index}`).classList.add('hole_has-goblin');
 
+function changeHole() {
+  deactivateHole();
+  activeHole = Math.floor(1 + Math.random() * 16);
+  activateHole(activeHole);
+}
+function reset() {
+  alert('Игра окончена!');
+  currentScore = 0;
+  failScore = 0;
+  playing = true;
+  document.querySelector('.success').textContent = 0;
+  document.querySelector('.fail').textContent = 0;
+}
+(() => {
   if (playing) {
-    const deactivateHole = () => document.querySelector('.hole_has-goblin').classList.remove('hole_has-goblin');
-    const activateHole = (index) => document.querySelector(`.hole${index}`).classList.add('hole_has-goblin');
     setInterval(() => {
       if (!playing) {
+        reset();
         return;
       }
-      deactivateHole();
-      activeHole = Math.floor(1 + Math.random() * 16);
-      activateHole(activeHole);
+      changeHole();
     }, 1000);
   }
 })();
 
-for (let index = 1; index < 17; index += 1) {
-  const hole = document.querySelector(`.hole${index}`);
-  hole.onclick = function () {
-    if (hole.classList.contains('hole_has-goblin')) {
-      this.currentScore += 1;
+holeSeparate.forEach((item) => {
+  item.addEventListener('click', () => {
+    if (item.classList.contains('hole_has-goblin')) {
+      changeHole();
+      currentScore += 1;
+      document.querySelector('.success').textContent = currentScore;
     } else {
-      this.failScore += 1;
+      changeHole();
+      failScore += 1;
+      document.querySelector('.fail').textContent = failScore;
+      if (failScore === 5) {
+        playing = false;
+      }
     }
-    // console.log(`"Счет успеха: "${this.currentScore}`, `"Счет провала: "${this.failScore}`);
-  };
-}
-console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
+  });
+});
