@@ -18,7 +18,7 @@
   }
 })();
 
-for (let currentScore, failScore, index = 1; index < 17; index += 1) {
+for (let currentScore = 0, failScore = 0, index = 1; index < 17; index += 1) {
   const hole = document.querySelector(`.hole${index}`);
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
