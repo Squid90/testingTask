@@ -18,17 +18,19 @@
   }
 })();
 
-for (let currentScore = 0, failScore = 0, index = 1; index < 17; index += 1) {
+for (let index = 1; index < 17; index += 1) {
   const hole = document.querySelector(`.hole${index}`);
+  let currentScore = 0;
+  let failScore = 0;
   hole.onclick = function () {
     if (hole.classList.contains('hole_has-goblin')) {
       currentScore += 1;
-      console.log(`${currentScore}`, `${failScore}`);
-      //document.getElementById('success').innerHTML = currentScore;
+      console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
+      // document.getElementById('success').innerHTML = currentScore;
     } else {
       failScore += 1;
-      console.log(`${currentScore}`, `${failScore}`);
-      //document.getElementById('fail').innerHTML = failScore;
+      console.log(`"Счет успеха: "${currentScore}`, `"Счет провала: "${failScore}`);
+      // document.getElementById('fail').innerHTML = failScore;
     }
   };
 }
