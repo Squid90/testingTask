@@ -1,4 +1,4 @@
-name: eventTask
+name: testingTask
 
 on: [push, pull_request]
 
