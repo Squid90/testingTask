@@ -12,11 +12,11 @@ function validator(number) {
   const firstNumber = parseInt(cleanSpace.charAt(0), 10);
   const twoNumbers = parseInt(cleanSpace.substring(0, 2), 10);
   let img;
-  let hidden = document.querySelector('.visible');
+  const hidden = document.querySelector('.visible');
   if (hidden !== null) {
     hidden.classList.remove('visible');
     hidden.classList.add('hidden');
-  };
+  }
 
   if (firstNumber === 4) {
     cardType = 'Visa';
